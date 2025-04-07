@@ -1,0 +1,4 @@
+SELECT ?thing1 ?thing2
+WHERE {
+    ?thing1 :hasGreaterThing ?thing2 .
+} 

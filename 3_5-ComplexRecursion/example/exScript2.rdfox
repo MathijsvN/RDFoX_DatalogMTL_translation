@@ -1,0 +1,19 @@
+
+# Import our data
+import +p 3_5-ComplexRecursion/example/exData.ttl
+
+# Import our rules
+import 3_5-ComplexRecursion/example/exRules2.dlog
+
+# Add some visual padding
+echo 
+echo ========= Query Results =========
+echo
+
+# Run our query
+evaluate 3_5-ComplexRecursion/example/exQuery.rq
+
+# Add some visual padding
+echo 
+echo =====================================
+echo
