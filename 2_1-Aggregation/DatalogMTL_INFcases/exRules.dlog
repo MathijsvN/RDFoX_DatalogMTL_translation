@@ -1,0 +1,4 @@
+# 2.1 Aggregation
+
+[?number, a, xsd:double] :-
+    ?number a xsd:integer

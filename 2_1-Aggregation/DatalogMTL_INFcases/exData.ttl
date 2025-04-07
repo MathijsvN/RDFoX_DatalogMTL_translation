@@ -1,0 +1,13 @@
+# 2.1 Aggregation
+
+@prefix : <https://rdfox.com/example#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+:productA a :Product ;
+    :hasReview :reviewA1 ;
+    :hasReview :reviewA2 .
+
+:productB a :Product ;
+    :hasReview :reviewB1 .
+
+"6" a xsd:integer ;

@@ -1,0 +1,8 @@
+# 2.1 Aggregation
+
+
+SELECT ?integer
+WHERE {
+    ?integer a xsd:double .
+}
+
