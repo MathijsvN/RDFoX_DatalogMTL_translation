@@ -6,8 +6,8 @@
     AGGREGATE(
         [?product, :hasReview, ?review],
         [?review, :hasStars, ?stars]
-        ON ___ # Enter the correct variable for the Aggregate to group by
-        BIND ___ AS ?reviewCount # Use the correct function to count the number of reviews
+        ON ?product # Enter the correct variable for the Aggregate to group by
+        BIND COUNT(?review) AS ?reviewCount # Use the correct function to count the number of reviews
         BIND AVG(?stars) AS ?averageStars
     ),
     FILTER(?averageStars > 4) ,

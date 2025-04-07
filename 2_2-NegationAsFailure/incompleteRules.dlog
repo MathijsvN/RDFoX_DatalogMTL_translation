@@ -5,9 +5,9 @@
     [?vehicleState, :hasSensorReading, ?reading] ,
     [?reading, :fromSensor, ?sensor] ,
     [?sensor, :supportsManeuver, ?availableManeuver] ,
-    ___ ( # Provide a negation function
+    NOT ( # Provide a negation function
         [?sensor, a, :PrimaryCamera] 
     ),
-    ___ ( # Provide a negation function
+    NOT EXISTS ?hazard IN ( # Provide a negation function
         [?reading, :detectsHazard, ?hazard]
     ).
