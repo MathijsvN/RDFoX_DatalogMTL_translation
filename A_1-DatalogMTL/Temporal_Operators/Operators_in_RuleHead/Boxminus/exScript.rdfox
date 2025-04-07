@@ -1,0 +1,23 @@
+# 2.3 Blank Nodes
+
+# Clear the datastore to ensure we start with a blank slate
+clear force
+
+# Import our data
+import +p A_1-DatalogMTL/DatalogMTL/exData.ttl
+
+# Import our rules
+import A_1-DatalogMTL/DatalogMTL/exRules.dlog
+
+# Add some visual padding
+echo 
+echo ========= Query Results =========
+echo
+
+# Run our query
+evaluate A_1-DatalogMTL/DatalogMTL/exQuery.rq
+
+# Add some visual padding
+echo 
+echo =====================================
+echo

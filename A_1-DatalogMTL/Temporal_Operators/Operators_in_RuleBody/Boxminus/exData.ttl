@@ -1,0 +1,27 @@
+# 2.3 Blank Nodes
+
+@prefix : <https://rdfox.com/example#> .
+
+:John :worksfor :OxfordUni .
+:Beth :worksfor :OxfordUni .
+:Alex :worksfor :CambridgeUni .
+
+:interval1 :from 2010 ;
+            :to 2014 .
+
+:interval2 :from 2020;
+            :to 2022 .
+
+:interval3 :from 2018 ;
+            :to 2021 .
+
+:interval1 :startsbefore :interval3 .
+
+:John :worksfor_p :interval1 .
+:interval1 :worksfor_ps :OxfordUni .
+
+:John :worksfor_p :interval2 .
+:interval2 :worksfor_ps :OxfordUni .
+
+:John :worksfor_p :interval3 .
+:interval3 :worksfor_ps :OxfordUni .
