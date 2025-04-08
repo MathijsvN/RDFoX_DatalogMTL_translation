@@ -1,13 +1,13 @@
-# 2.3 Blank Nodes
+# A_1 Diamondplus in rule body
 
 # Clear the datastore to ensure we start with a blank slate
 clear force
 
 # Import our data
-import +p A_1-DatalogMTL/DatalogMTL/exData.ttl
+import +p A_1-DatalogMTL\Temporal_Operators\Operators_in_RuleBody\Diamondplus\exData.ttl
 
 # Import our rules
-import A_1-DatalogMTL/DatalogMTL/exRules.dlog
+import  A_1-DatalogMTL\Temporal_Operators\Operators_in_RuleBody\Diamondplus\exRules.dlog
 
 # Add some visual padding
 echo 
@@ -15,7 +15,7 @@ echo ========= Query Results =========
 echo
 
 # Run our query
-evaluate A_1-DatalogMTL/DatalogMTL/exQuery.rq
+evaluate A_1-DatalogMTL\Temporal_Operators\Operators_in_RuleBody\Diamondplus\exQuery.rq
 
 # Add some visual padding
 echo 
