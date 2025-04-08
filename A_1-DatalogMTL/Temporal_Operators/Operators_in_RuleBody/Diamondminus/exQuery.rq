@@ -1,10 +1,10 @@
-# 2.3 Blank Nodes
+# A_1 Boxminus in rule body
 
-SELECT ?person ?university ?start ?end ?interval
+SELECT ?person ?university ?interval ?start ?end
 WHERE {
-    ?person :worksfor ?university .
-    ?person :worksfor_p ?interval .
-    ?interval :worksfor_ps ?university .
+    ?person :recentlyEmployedBy ?university .
+    ?person :recentlyEmployedBy_p ?interval .
+    ?interval :recentlyEmployedBy_ps ?university .
     ?interval :from ?start .
     ?interval :to ?end .
 }

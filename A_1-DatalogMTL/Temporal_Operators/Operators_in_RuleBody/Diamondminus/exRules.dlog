@@ -1,35 +1,18 @@
-# 2.3 Blank Nodes
+# A_1 Boxminus in rule body
 
 [?person, :associatedWith, ?university] :-
     [?person, :worksfor, ?university] .
 
-[?interval1, :startsbefore, ?interval2] :-
-    [ ?interval1, :from, ?start1], 
-    [ ?interval2, :from, ?start2],
-    FILTER( ?start1 < ?start2 ) . 
-
-
-[?subject, :worksfor_p, ?newInterval], 
-[ ?newInterval, :worksfor_ps , ?object ], 
-[ ?newInterval, :from , ?start1 ], 
-[ ?newInterval, :to , ?end2] :-
-    [ ?subject, :worksfor_p , ?interval1 ],
-    [ ?interval1, :worksfor_ps , ?object ],
-    [ ?interval1, :from , ?start1 ],
-    [ ?interval1, :to , ?end1 ],
-    [ ?subject, :worksfor_p , ?interval2 ],
-    [ ?interval2, :worksfor_ps , ?object ],
-    [ ?interval2, :from , ?start2 ],
-    [ ?interval2, :to , ?end2 ],
-    FILTER (?start1 < ?start2) ,
-    FILTER (?start2 < ?end1 ) ,
-    FILTER (?end1 < ?end2 ) ,
-    SKOLEM ("Time Interval", ?start1, ?end2, ?newInterval ) .
-
-
-[?originalString, :originalSting, ?newInterval],
-[?originalStart, :originalStart, ?newInterval],
-[?originalEnd, :originalEnd, ?newInterval] :-
-    [?person, :worksfor_p, ?newInterval] ,
-    [?newInterval, :worksfor_ps, ?university],  
-    SKOLEM(?originalString, ?originalStart, ?originalEnd, ?newInterval) .
+[ ?person, :recentlyEmployedBy, ?university ],
+[ ?person, :recentlyEmployedBy_p, ?newInterval], 
+[ ?newInterval, :recentlyEmployedBy_ps, ?university], 
+[ ?newInterval, :from, ?start_head], 
+[ ?newInterval, :to, ?end_head] :-
+    [ ?person, :worksfor, ?university ],
+    [ ?person, :worksfor_p, ?interval], 
+    [ ?interval, :worksfor_ps, ?university],
+    [ ?interval, :from, ?start_1],
+    [ ?interval, :to, ?end_1],  
+    BIND ( ?start_1 + 0 AS ?start_head ),
+    BIND ( ?end_1 + 3 AS ?end_head ),
+    SKOLEM ( "Time interval", ?start_1, ?end_1, ?newInterval ) .

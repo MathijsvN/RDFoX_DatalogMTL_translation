@@ -1,4 +1,4 @@
-# 2.3 Blank Nodes
+# A_1 Boxminus in rule body
 
 @prefix : <https://rdfox.com/example#> .
 
@@ -25,3 +25,7 @@
 
 :John :worksfor_p :interval3 .
 :interval3 :worksfor_ps :OxfordUni .
+
+
+:subscript1 :lowerbound 0 .
+:subscript1 :upperbound 3 .
