@@ -1,6 +1,6 @@
-# A_1 Boxminus in rule body
+# A_1 Diamondminus in rule body
 
-SELECT ?person ?university ?interval ?start ?end
+SELECT ?person ?university ?start ?end
 WHERE {
     ?person :recentlyEmployedBy ?university .
     ?person :recentlyEmployedBy_p ?interval .
